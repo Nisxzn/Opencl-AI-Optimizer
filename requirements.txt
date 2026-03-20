@@ -1,0 +1,11 @@
+numpy>=1.21
+
+# OpenCL backend (required for GPU acceleration)
+pyopencl>=2022.1
+
+# Optional: Keras/TF model support
+# tensorflow>=2.10
+
+# Development / testing
+pytest>=7.0
+pytest-cov

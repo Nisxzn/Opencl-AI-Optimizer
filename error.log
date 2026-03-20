@@ -1,0 +1,14 @@
+C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:781: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (5) reached and the optimization hasn't converged yet.
+  warnings.warn(
+Traceback (most recent call last):
+  File "E:\~Works\opencl_ml_optimizer\examples\integrate_your_model.py", line 372, in <module>
+    _demo_pytorch()
+  File "E:\~Works\opencl_ml_optimizer\examples\integrate_your_model.py", line 361, in _demo_pytorch
+    out = optimized.predict(x)
+  File "E:\~Works\opencl_ml_optimizer\examples\..\optimizer\core.py", line 119, in predict
+    x = layer.forward(x)
+  File "E:\~Works\opencl_ml_optimizer\examples\..\optimizer\layers\dense.py", line 66, in forward
+    out = self._act_op.apply(self.activation, out)
+  File "E:\~Works\opencl_ml_optimizer\examples\..\optimizer\ops\activations.py", line 80, in apply
+    raise ValueError(
+ValueError: Unknown activation 'linear'. Supported: ['relu', 'sigmoid', 'tanh', 'leaky_relu', 'elu', 'softmax']

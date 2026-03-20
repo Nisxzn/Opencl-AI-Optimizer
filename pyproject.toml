@@ -1,0 +1,45 @@
+[build-system]
+requires      = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name            = "opencl-ai-optimizer"
+version         = "1.0.0"
+description     = "Lightweight OpenCL-accelerated inference optimizer for ML/DL models"
+readme          = "README.md"
+license         = { text = "MIT" }
+requires-python = ">=3.8"
+keywords        = ["opencl", "gpu", "inference", "optimizer", "deep-learning", "cnn"]
+
+dependencies = [
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+opencl = ["pyopencl>=2022.1"]
+keras  = ["tensorflow>=2.10"]
+dev    = ["pytest>=7.0", "pytest-cov"]
+all    = ["pyopencl>=2022.1", "tensorflow>=2.10", "pytest>=7.0"]
+
+[project.scripts]
+opencl-optimizer-benchmark = "examples.benchmark_suite:main"
+
+[project.urls]
+Homepage   = "https://github.com/your-org/opencl-ai-optimizer"
+Repository = "https://github.com/your-org/opencl-ai-optimizer"
+Issues     = "https://github.com/your-org/opencl-ai-optimizer/issues"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "examples*"]
+
+[tool.setuptools.package-data]
+optimizer = ["ops/kernels/*.cl"]
+
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+python_files = ["test_*.py"]
+addopts      = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["optimizer"]
+omit   = ["tests/*", "examples/*"]
